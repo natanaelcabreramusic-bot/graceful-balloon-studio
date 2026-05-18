@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Graceful Balloon Studio creates elegant balloon bouquets, garlands, centerpieces, columns, entrances, custom installations, and event designs." />
+  <title>Graceful Balloon Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" aria-label="Main navigation">
+    <a class="logo" href="#top" aria-label="Graceful Balloon Studio home">
+      <span class="logo-mark">GB</span>
+      <span>Graceful Balloon Studio</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="#top">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Graceful Balloon Studio logo">
+      <img class="hero-logo" src="logo.png" alt="Graceful Balloon Studio" loading="eager" decoding="async" fetchpriority="high" />
+    </section>
+
+    <section id="contact" class="section-pad contact" aria-labelledby="contact-title">
+      <div class="container contact-card">
+        <div>
+          <p class="eyebrow">Let's celebrate beautifully</p>
+          <h2 id="contact-title">Contact Graceful Balloon Studio</h2>
+          <p>Share your date, venue, color palette, and inspiration. We'll help shape the perfect design for your event.</p>
+        </div>
+
+        <div class="contact-details" aria-label="Contact details">
+          <a href="tel:+15617291002">(561) 729-1002</a>
+          <a href="mailto:gracefulballoonstudio@gmail.com">gracefulballoonstudio@gmail.com</a>
+          <button class="button button-secondary quote-trigger" type="button" data-open-quote-modal>Request a Quote</button>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="collections" class="section-pad collections" aria-labelledby="collections-title">
+      <div class="container">
+        <h1 id="collections-title" class="sr-only">Order your bouquet</h1>
+
+        <div class="collection-grid single-bouquet-grid">
+          <a class="collection-card product-card" href="#gallery" data-jump-filter="bouquets" data-product="flower-bouquet" aria-label="Customize the Flower Bouquet">
+            <span class="product-image-wrap">
+              <img src="images/bouquets/flower-bouquet-wide.jpg" alt="Flower Bouquet by Graceful Balloon Studio" loading="lazy" decoding="async" />
+            </span>
+            <span class="product-card-content">
+              <span class="collection-title">Order your bouquet</span>
+              <span class="product-price">Starting at $35</span>
+              <span class="collection-link">Customize Bouquet →</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section-pad gallery-section" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-heading gallery-heading">
+          <div>
+            <p class="eyebrow">Portfolio</p>
+            <h2 id="gallery-title">Gallery</h2>
+            <p>Browse real Graceful Balloon Studio designs across bouquets, arches, centerpieces, entrances, custom installations, and baby showers.</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid categorized-gallery" aria-live="polite">
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/bouquets-1.png" alt="Bouquets portfolio image 1" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="arches-garlands">
+            <img src="images/arches-garlands/arch-1.png" alt="Arches & Garlands portfolio image 1" loading="lazy" decoding="async" />
+            <figcaption>Arches & Garlands</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-1.png" alt="Centerpieces portfolio image 1" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="columns-entrances">
+            <img src="images/columns-entrances/columns-1.PNG" alt="Columns & Entrances portfolio image 1" loading="lazy" decoding="async" />
+            <figcaption>Columns & Entrances</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="columns-entrances">
+            <img src="images/columns-entrances/red-carpet-luxe-arch.jpg" alt="Columns & Entrances portfolio image 2" loading="lazy" decoding="async" />
+            <figcaption>Columns & Entrances</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-1.jpg" alt="Custom Installations portfolio image 1" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="baby-shower">
+            <img src="images/baby-shower/baby-1.png" alt="Baby Shower portfolio image 1" loading="lazy" decoding="async" />
+            <figcaption>Baby Shower</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/bouquets-2.png" alt="Bouquets portfolio image 2" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="arches-garlands">
+            <img src="images/arches-garlands/arch-2.png" alt="Arches & Garlands portfolio image 2" loading="lazy" decoding="async" />
+            <figcaption>Arches & Garlands</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-2.PNG" alt="Centerpieces portfolio image 2" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-2.png" alt="Custom Installations portfolio image 2" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="baby-shower">
+            <img src="images/baby-shower/baby-2.png" alt="Baby Shower portfolio image 2" loading="lazy" decoding="async" />
+            <figcaption>Baby Shower</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/bouquets-3.png" alt="Bouquets portfolio image 3" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-3.png" alt="Centerpieces portfolio image 3" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-3.PNG" alt="Custom Installations portfolio image 3" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/flower-bouquet-wide.jpg" alt="Bouquets portfolio image 4" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="arches-garlands">
+            <img src="images/arches-garlands/arch-4.png" alt="Arches & Garlands portfolio image 4" loading="lazy" decoding="async" />
+            <figcaption>Arches & Garlands</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="arches-garlands">
+            <img src="images/arches-garlands/hollywood-glam-backdrop.PNG" alt="Arches & Garlands portfolio image 5" loading="lazy" decoding="async" />
+            <figcaption>Arches & Garlands</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-4.PNG" alt="Centerpieces portfolio image 4" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-4.PNG" alt="Custom Installations portfolio image 4" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="baby-shower">
+            <img src="images/baby-shower/baby-4.png" alt="Baby Shower portfolio image 4" loading="lazy" decoding="async" />
+            <figcaption>Baby Shower</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/bouquets-5.png" alt="Bouquets portfolio image 5" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-5.png" alt="Centerpieces portfolio image 5" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-5.PNG" alt="Custom Installations portfolio image 5" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/bouquets-6.png" alt="Bouquets portfolio image 6" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-6.png" alt="Centerpieces portfolio image 6" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-6.png" alt="Custom Installations portfolio image 6" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/bouquets-7.png" alt="Bouquets portfolio image 7" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-7.png" alt="Centerpieces portfolio image 7" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-7.png" alt="Custom Installations portfolio image 7" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/bouquets-8.png" alt="Bouquets portfolio image 8" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-8.png" alt="Centerpieces portfolio image 8" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-8.png" alt="Custom Installations portfolio image 8" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="bouquets">
+            <img src="images/bouquets/bouquets-9.png" alt="Bouquets portfolio image 9" loading="lazy" decoding="async" />
+            <figcaption>Bouquets</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-9.png" alt="Centerpieces portfolio image 9" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-9.png" alt="Custom Installations portfolio image 9" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-10.png" alt="Centerpieces portfolio image 10" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-10.png" alt="Custom Installations portfolio image 10" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="centerpieces">
+            <img src="images/centerpieces/centerpieces-11.png" alt="Centerpieces portfolio image 11" loading="lazy" decoding="async" />
+            <figcaption>Centerpieces</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-11.png" alt="Custom Installations portfolio image 11" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="custom-installations">
+            <img src="images/custom-installations/custom-12.png" alt="Custom Installations portfolio image 12" loading="lazy" decoding="async" />
+            <figcaption>Custom Installations</figcaption>
+          </figure>
+        </div>
+        <p class="empty-gallery" hidden>No images are available in this category yet.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="bouquet-modal" id="bouquet-modal" hidden aria-hidden="true">
+    <div class="bouquet-modal-backdrop" data-close-bouquet-modal></div>
+    <section class="bouquet-dialog" role="dialog" aria-modal="true" aria-labelledby="bouquet-modal-title">
+      <button class="bouquet-close" type="button" data-close-bouquet-modal aria-label="Close bouquet customizer">×</button>
+      <div class="bouquet-preview">
+        <img id="bouquet-modal-image" src="images/bouquets/bouquets-1.png" alt="Champagne Garden Bouquet" loading="lazy" decoding="async" />
+      </div>
+      <form class="bouquet-customizer" id="bouquet-customizer">
+        <p class="eyebrow">Customize your bouquet</p>
+        <h2 id="bouquet-modal-title">Champagne Garden Bouquet</h2>
+        <p id="bouquet-modal-description">A soft champagne-toned bouquet with graceful garden-inspired styling.</p>
+
+        <fieldset class="field-group bouquet-size-fieldset" aria-describedby="bouquet-price-summary">
+          <legend>Bouquet size</legend>
+          <p class="bouquet-price-summary" id="bouquet-price-summary" aria-live="polite">$65 · Classic (12 flowers)</p>
+          <div class="bouquet-size-options" role="radiogroup" aria-label="Choose bouquet size">
+            <button class="bouquet-size-card" type="button" role="radio" aria-checked="false" data-size-option="Petite" data-flower-count="6" data-price="35">
+              <span class="size-card-name">Petite</span>
+              <span class="size-card-count">6 flowers</span>
+              <span class="size-card-price">$35</span>
+            </button>
+            <button class="bouquet-size-card is-selected" type="button" role="radio" aria-checked="true" data-size-option="Classic" data-flower-count="12" data-price="65">
+              <span class="size-card-name">Classic</span>
+              <span class="size-card-count">12 flowers</span>
+              <span class="size-card-price">$65</span>
+            </button>
+            <button class="bouquet-size-card" type="button" role="radio" aria-checked="false" data-size-option="Full" data-flower-count="18" data-price="90">
+              <span class="size-card-name">Full</span>
+              <span class="size-card-count">18 flowers</span>
+              <span class="size-card-price">$90</span>
+            </button>
+            <button class="bouquet-size-card" type="button" role="radio" aria-checked="false" data-size-option="Luxury" data-flower-count="24" data-price="120">
+              <span class="size-card-name">Luxury</span>
+              <span class="size-card-count">24 flowers</span>
+              <span class="size-card-price">$120</span>
+            </button>
+          </div>
+          <input type="hidden" id="bouquet-size" name="size" value="Classic" />
+          <input type="hidden" id="bouquet-flower-count" name="flowerCount" value="12" />
+          <input type="hidden" id="bouquet-price" name="price" value="65" />
+        </fieldset>
+
+        <fieldset class="field-group color-fieldset color-fieldset-flower">
+          <legend>Select Flower Color</legend>
+          <div class="color-selection-meta">
+            <span class="selection-counter" data-counter-for="flower">Selected: 1/3</span>
+            <span class="selection-limit-message" data-message-for="flower" hidden>You can select up to 3 colors.</span>
+          </div>
+          <div class="color-options balloon-color-options" aria-label="Select up to 3 flower colors">
+            <button type="button" class="color-option balloon-swatch is-selected" data-group="flower" data-color="White" aria-label="White flower color" aria-pressed="true" title="White"><span style="--swatch:#ffffff"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Ivory" aria-label="Ivory flower color" aria-pressed="false" title="Ivory"><span style="--swatch:#fff6e8"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Blush" aria-label="Blush flower color" aria-pressed="false" title="Blush"><span style="--swatch:#f4cfc7"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Pink" aria-label="Pink flower color" aria-pressed="false" title="Pink"><span style="--swatch:#f7a6bf"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Fuchsia" aria-label="Fuchsia flower color" aria-pressed="false" title="Fuchsia"><span style="--swatch:#d92786"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Red" aria-label="Red flower color" aria-pressed="false" title="Red"><span style="--swatch:#c9282d"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Orange" aria-label="Orange flower color" aria-pressed="false" title="Orange"><span style="--swatch:#f47b33"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Yellow" aria-label="Yellow flower color" aria-pressed="false" title="Yellow"><span style="--swatch:#f6d84a"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Blue" aria-label="Blue flower color" aria-pressed="false" title="Blue"><span style="--swatch:#73a9d9"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Royal Blue" aria-label="Royal Blue flower color" aria-pressed="false" title="Royal Blue"><span style="--swatch:#2350a2"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Navy" aria-label="Navy flower color" aria-pressed="false" title="Navy"><span style="--swatch:#172846"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Lilac" aria-label="Lilac flower color" aria-pressed="false" title="Lilac"><span style="--swatch:#c8a7d8"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Green" aria-label="Green flower color" aria-pressed="false" title="Green"><span style="--swatch:#4d9a57"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Eucalyptus" aria-label="Eucalyptus flower color" aria-pressed="false" title="Eucalyptus"><span style="--swatch:#8fa08b"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Sand" aria-label="Sand flower color" aria-pressed="false" title="Sand"><span style="--swatch:#d8c2aa"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Gold" aria-label="Gold flower color" aria-pressed="false" title="Gold"><span style="--swatch:#c7a15d"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Silver" aria-label="Silver flower color" aria-pressed="false" title="Silver"><span style="--swatch:#c8c8c8"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="flower" data-color="Black" aria-label="Black flower color" aria-pressed="false" title="Black"><span style="--swatch:#171412"></span></button>
+          </div>
+          <input type="hidden" id="flower-color" name="flowerColor" value="White" />
+        </fieldset>
+
+        <fieldset class="field-group color-fieldset color-fieldset-stem">
+          <legend>Select Stem Color</legend>
+          <div class="color-selection-meta">
+            <span class="selection-counter" data-counter-for="stem">Selected: 2/3</span>
+            <span class="selection-limit-message" data-message-for="stem" hidden>You can select up to 3 colors.</span>
+          </div>
+          <div class="color-options balloon-color-options" aria-label="Select up to 3 stem colors">
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="White" aria-label="White stem color" aria-pressed="false" title="White"><span style="--swatch:#ffffff"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Ivory" aria-label="Ivory stem color" aria-pressed="false" title="Ivory"><span style="--swatch:#fff6e8"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Sand" aria-label="Sand stem color" aria-pressed="false" title="Sand"><span style="--swatch:#d8c2aa"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Green" aria-label="Green stem color" aria-pressed="false" title="Green"><span style="--swatch:#4d9a57"></span></button>
+            <button type="button" class="color-option balloon-swatch is-selected" data-group="stem" data-color="Eucalyptus" aria-label="Eucalyptus stem color" aria-pressed="true" title="Eucalyptus"><span style="--swatch:#8fa08b"></span></button>
+            <button type="button" class="color-option balloon-swatch is-selected" data-group="stem" data-color="Sage" aria-label="Sage stem color" aria-pressed="true" title="Sage"><span style="--swatch:#a8b59a"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Lime Green" aria-label="Lime Green stem color" aria-pressed="false" title="Lime Green"><span style="--swatch:#8ac65a"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Forest Green" aria-label="Forest Green stem color" aria-pressed="false" title="Forest Green"><span style="--swatch:#244a35"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Mocha" aria-label="Mocha stem color" aria-pressed="false" title="Mocha"><span style="--swatch:#6b4f3f"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Gold" aria-label="Gold stem color" aria-pressed="false" title="Gold"><span style="--swatch:#c7a15d"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Silver" aria-label="Silver stem color" aria-pressed="false" title="Silver"><span style="--swatch:#c8c8c8"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="stem" data-color="Black" aria-label="Black stem color" aria-pressed="false" title="Black"><span style="--swatch:#171412"></span></button>
+          </div>
+          <input type="hidden" id="stem-color" name="stemColor" value="Eucalyptus, Sage" />
+        </fieldset>
+
+        <fieldset class="field-group color-fieldset color-fieldset-bow">
+          <legend>Select Bow Color</legend>
+          <div class="color-selection-meta">
+            <span class="selection-counter" data-counter-for="bow">Selected: 1/3</span>
+            <span class="selection-limit-message" data-message-for="bow" hidden>You can select up to 3 colors.</span>
+          </div>
+          <div class="color-options balloon-color-options" aria-label="Select up to 3 bow colors">
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="White" aria-label="White bow color" aria-pressed="false" title="White"><span style="--swatch:#ffffff"></span></button>
+            <button type="button" class="color-option balloon-swatch is-selected" data-group="bow" data-color="Ivory" aria-label="Ivory bow color" aria-pressed="true" title="Ivory"><span style="--swatch:#fff6e8"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Blush" aria-label="Blush bow color" aria-pressed="false" title="Blush"><span style="--swatch:#f4cfc7"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Pink" aria-label="Pink bow color" aria-pressed="false" title="Pink"><span style="--swatch:#f7a6bf"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Fuchsia" aria-label="Fuchsia bow color" aria-pressed="false" title="Fuchsia"><span style="--swatch:#d92786"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Red" aria-label="Red bow color" aria-pressed="false" title="Red"><span style="--swatch:#c9282d"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Orange" aria-label="Orange bow color" aria-pressed="false" title="Orange"><span style="--swatch:#f47b33"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Yellow" aria-label="Yellow bow color" aria-pressed="false" title="Yellow"><span style="--swatch:#f6d84a"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Blue" aria-label="Blue bow color" aria-pressed="false" title="Blue"><span style="--swatch:#73a9d9"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Royal Blue" aria-label="Royal Blue bow color" aria-pressed="false" title="Royal Blue"><span style="--swatch:#2350a2"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Navy" aria-label="Navy bow color" aria-pressed="false" title="Navy"><span style="--swatch:#172846"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Lilac" aria-label="Lilac bow color" aria-pressed="false" title="Lilac"><span style="--swatch:#c8a7d8"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Green" aria-label="Green bow color" aria-pressed="false" title="Green"><span style="--swatch:#4d9a57"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Eucalyptus" aria-label="Eucalyptus bow color" aria-pressed="false" title="Eucalyptus"><span style="--swatch:#8fa08b"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Sand" aria-label="Sand bow color" aria-pressed="false" title="Sand"><span style="--swatch:#d8c2aa"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Gold" aria-label="Gold bow color" aria-pressed="false" title="Gold"><span style="--swatch:#c7a15d"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Silver" aria-label="Silver bow color" aria-pressed="false" title="Silver"><span style="--swatch:#c8c8c8"></span></button>
+            <button type="button" class="color-option balloon-swatch" data-group="bow" data-color="Black" aria-label="Black bow color" aria-pressed="false" title="Black"><span style="--swatch:#171412"></span></button>
+          </div>
+          <input type="hidden" id="bow-color" name="bowColor" value="Ivory" />
+        </fieldset>
+
+        <label class="field-group" for="bouquet-quantity">
+          <span>Quantity</span>
+          <input id="bouquet-quantity" name="quantity" type="number" min="1" value="1" />
+        </label>
+
+        <label class="field-group" for="bouquet-notes">
+          <span>Notes</span>
+          <textarea id="bouquet-notes" name="notes" rows="5" placeholder="Tell us any extra details that will help us create the perfect design for your event."></textarea>
+        </label>
+
+        <button class="button bouquet-request-quote-button" type="button" data-bouquet-request-quote>Request a Quote</button>
+        <p class="bouquet-quote-helper">You’ll be taken to the request a quote form.</p>
+        <p class="checkout-validation-message" id="bouquet-checkout-message" role="alert" hidden></p>
+      </form>
+    </section>
+  </div>
+
+  <div class="quote-modal" id="quote-modal" hidden aria-hidden="true">
+    <div class="quote-modal-backdrop" data-close-quote-modal></div>
+    <section class="quote-dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+      <button class="quote-close" type="button" data-close-quote-modal aria-label="Close quote form">×</button>
+      <div class="quote-intro">
+        <p class="eyebrow">Custom inquiry</p>
+        <h2 id="quote-modal-title">Tell Us About Your Event</h2>
+        <p>We would love to hear more about your celebration and create something beautiful for your special day. Please complete the form below and we will contact you with a custom quote.</p>
+      </div>
+
+      <form class="quote-form" id="quote-form">
+        <label>Name<input name="Name" type="text" autocomplete="name" required /></label>
+        <label>Email<input name="Email" type="email" autocomplete="email" required /></label>
+        <label>Phone Number<input name="Phone Number" type="tel" autocomplete="tel" /></label>
+        <label>Event Date<input name="Event Date" type="date" /></label>
+        <label>Event Location<input name="Event Location" type="text" /></label>
+        <label>Theme or Occasion<input name="Theme or Occasion" type="text" /></label>
+        <label>Desired Colors<input name="Desired Colors" type="text" /></label>
+        <label>Budget Range<select name="Budget Range">
+          <option value="">Select a range</option>
+          <option>$150–$300</option>
+          <option>$300–$600</option>
+          <option>$600–$1,000</option>
+          <option>$1,000+</option>
+        </select></label>
+        <label class="quote-notes">Inspiration / Notes<textarea name="Inspiration / Notes" rows="5" placeholder="Please tell us your event details, preferred colors, and any gallery photo numbers you would like us to use as inspiration."></textarea></label>
+        <label class="quote-notes">Anything Else We Should Know?<textarea name="Anything Else We Should Know" rows="6" placeholder="Tell us any extra details that will help us create the perfect design for your event."></textarea></label>
+        <label class="quote-upload">Upload Inspiration Photos<input name="Inspiration Photos" type="file" accept="image/*" multiple /></label>
+        <button class="button quote-submit" type="submit">Request My Quote</button>
+      </form>
+    </section>
+  </div>
+
+  <div class="gallery-lightbox" id="gallery-lightbox" hidden aria-hidden="true">
+    <button class="lightbox-backdrop" type="button" data-close-gallery-lightbox aria-label="Close image preview"></button>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+      <button class="lightbox-close" type="button" data-close-gallery-lightbox aria-label="Close image preview">×</button>
+      <button class="lightbox-nav lightbox-prev" type="button" data-gallery-lightbox-prev aria-label="Previous image">‹</button>
+      <img id="lightbox-image" src="" alt="" />
+      <button class="lightbox-nav lightbox-next" type="button" data-gallery-lightbox-next aria-label="Next image">›</button>
+    </div>
+  </div>
+
+  <div class="floating-contact" aria-label="Quick contact links">
+    <a href="tel:+15617291002" aria-label="Call Graceful Balloon Studio">Call</a>
+    <a href="mailto:gracefulballoonstudio@gmail.com" aria-label="Email Graceful Balloon Studio">Email</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Graceful Balloon Studio. All rights reserved.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

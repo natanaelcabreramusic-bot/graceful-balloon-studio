@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Complete your Graceful Balloon Studio bouquet checkout." />
+  <title>Checkout | Graceful Balloon Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="checkout-page">
+  <header class="site-header" aria-label="Main navigation">
+    <a class="logo" href="index.html" aria-label="Graceful Balloon Studio home">
+      <span class="logo-mark">GB</span>
+      <span>Graceful Balloon Studio</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="index.html#collections">Collections</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="checkout-main">
+    <section class="checkout-card" aria-labelledby="checkout-title">
+      <p class="eyebrow">Secure checkout</p>
+      <h1 id="checkout-title">Review Your Order</h1>
+      <p class="checkout-intro">Please review your bouquet details below. Once everything looks just right, our studio will help finalize the next step with care.</p>
+
+      <div class="cart-toolbar" id="cart-toolbar" hidden>
+        <span id="cart-count">0 items</span>
+        <button class="cart-clear-button" type="button" data-clear-cart>Clear Cart</button>
+      </div>
+
+      <dl class="checkout-summary" id="checkout-summary">
+        <div><dt>Product</dt><dd data-checkout-field="product">Bouquet</dd></div>
+        <div><dt>Size</dt><dd data-checkout-field="size">—</dd></div>
+        <div><dt>Price</dt><dd data-checkout-field="price">—</dd></div>
+        <div><dt>Flower Colors</dt><dd data-checkout-field="flowerColors">—</dd></div>
+        <div><dt>Stem Colors</dt><dd data-checkout-field="stemColors">—</dd></div>
+        <div><dt>Bow Colors</dt><dd data-checkout-field="bowColors">—</dd></div>
+        <div><dt>Quantity</dt><dd data-checkout-field="quantity">—</dd></div>
+        <div><dt>Notes</dt><dd data-checkout-field="notes">None</dd></div>
+      </dl>
+
+      <div class="checkout-actions">
+        <a class="button" id="payment-link" href="mailto:gracefulballoonstudio@gmail.com?subject=Bouquet%20Checkout%20Request">Proceed to Secure Checkout</a>
+        <a class="button button-ghost" href="index.html#collections">Back to Bouquets</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const params = new URLSearchParams(window.location.search);
+    const checkoutSummary = document.querySelector('#checkout-summary');
+    const paymentLink = document.querySelector('#payment-link');
+    const cartToolbar = document.querySelector('#cart-toolbar');
+    const cartCount = document.querySelector('#cart-count');
+    const clearCartButton = document.querySelector('[data-clear-cart]');
+    const cartStorageKey = 'gracefulBalloonCart';
+
+    if (navToggle && siteNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      siteNav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          siteNav.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    function getStoredCart() {
+      try {
+        return JSON.parse(localStorage.getItem(cartStorageKey)) || [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function saveStoredCart(items) {
+      localStorage.setItem(cartStorageKey, JSON.stringify(items));
+    }
+
+    function escapeHtml(value) {
+      return String(value || '').replace(/[&<>"']/g, (character) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[character]));
+    }
+
+    function getItemSizeSummary(item) {
+      if (item.sizeSummary) return item.sizeSummary;
+      if (item.price && item.flowerCount && item.size) return `$${item.price} · ${item.size} (${item.flowerCount} flowers)`;
+      return item.size || '—';
+    }
+
+    function itemToLines(item, index) {
+      return [
+        `Item ${index + 1}: ${item.product || 'Bouquet'}`,
+        `Size: ${getItemSizeSummary(item)}`,
+        `Price: ${item.price ? `$${item.price}` : '—'}`,
+        `Flower Count: ${item.flowerCount || '—'}`,
+        `Flower Colors: ${item.flowerColors || 'None'}`,
+        `Stem Colors: ${item.stemColors || 'None'}`,
+        `Bow Colors: ${item.bowColors || 'None'}`,
+        `Quantity: ${item.quantity || '1'}`,
+        `Notes: ${item.notes || 'None'}`
+      ];
+    }
+
+    function updatePaymentLink(items) {
+      if (!paymentLink) return;
+      const body = items.length
+        ? items.flatMap(itemToLines).join('\n\n')
+        : 'Please send me a payment link for my Graceful Balloon Studio order.';
+
+      paymentLink.href = `mailto:gracefulballoonstudio@gmail.com?subject=${encodeURIComponent('Bouquet Checkout Request')}&body=${encodeURIComponent(body)}`;
+      paymentLink.toggleAttribute('aria-disabled', !items.length);
+    }
+
+    function renderEmptyCart() {
+      if (!checkoutSummary) return;
+      checkoutSummary.innerHTML = `
+        <div class="checkout-empty-cart">
+          <dt>Cart</dt>
+          <dd>Your cart is currently empty.</dd>
+        </div>
+      `;
+      if (cartToolbar) cartToolbar.hidden = true;
+      updatePaymentLink([]);
+    }
+
+    function renderCart() {
+      const cartItems = getStoredCart();
+
+      if (!cartItems.length) {
+        renderEmptyCart();
+        return;
+      }
+
+      if (cartToolbar) cartToolbar.hidden = false;
+      if (cartCount) {
+        const totalQuantity = cartItems.reduce((sum, item) => sum + Math.max(1, Number(item.quantity) || 1), 0);
+        cartCount.textContent = `${totalQuantity} ${totalQuantity === 1 ? 'item' : 'items'}`;
+      }
+
+      checkoutSummary.innerHTML = cartItems.map((item, index) => `
+        <div class="checkout-cart-item">
+          <dt>Item ${index + 1}</dt>
+          <dd>
+            <div class="cart-item-heading">
+              <strong>${escapeHtml(item.product || 'Bouquet')}</strong>
+              <button class="cart-remove-button" type="button" data-remove-item="${index}" aria-label="Remove ${escapeHtml(item.product || 'item')}">Remove</button>
+            </div>
+            <span>Size: ${escapeHtml(getItemSizeSummary(item))}</span>
+            <span>Price: ${item.price ? `$${escapeHtml(item.price)}` : '—'}</span>
+            <span>Flower Colors: ${escapeHtml(item.flowerColors || 'None')}</span>
+            <span>Stem Colors: ${escapeHtml(item.stemColors || 'None')}</span>
+            <span>Bow Colors: ${escapeHtml(item.bowColors || 'None')}</span>
+            <div class="cart-quantity-row">
+              <span>Quantity: ${escapeHtml(item.quantity || '1')}</span>
+              <div class="cart-quantity-controls" aria-label="Update quantity">
+                <button type="button" data-quantity-decrease="${index}" aria-label="Decrease quantity">−</button>
+                <button type="button" data-quantity-increase="${index}" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+            <span>Notes: ${escapeHtml(item.notes || 'None')}</span>
+          </dd>
+        </div>
+      `).join('');
+
+      updatePaymentLink(cartItems);
+    }
+
+    function updateCartItem(index, updater) {
+      const cartItems = getStoredCart();
+      if (!cartItems[index]) return;
+      updater(cartItems[index], cartItems);
+      saveStoredCart(cartItems.filter(Boolean));
+      renderCart();
+    }
+
+    function renderLegacyParams() {
+      document.querySelectorAll('[data-checkout-field]').forEach((field) => {
+        const key = field.dataset.checkoutField;
+        const value = params.get(key);
+        if (value) field.textContent = value;
+      });
+      if (cartToolbar) cartToolbar.hidden = true;
+      updatePaymentLink([]);
+    }
+
+    checkoutSummary?.addEventListener('click', (event) => {
+      const removeButton = event.target.closest('[data-remove-item]');
+      const decreaseButton = event.target.closest('[data-quantity-decrease]');
+      const increaseButton = event.target.closest('[data-quantity-increase]');
+
+      if (removeButton) {
+        const index = Number(removeButton.dataset.removeItem);
+        const cartItems = getStoredCart();
+        cartItems.splice(index, 1);
+        saveStoredCart(cartItems);
+        renderCart();
+      }
+
+      if (decreaseButton) {
+        updateCartItem(Number(decreaseButton.dataset.quantityDecrease), (item, items) => {
+          const nextQuantity = Math.max(0, (Number(item.quantity) || 1) - 1);
+          if (nextQuantity === 0) items[items.indexOf(item)] = null;
+          else item.quantity = String(nextQuantity);
+        });
+      }
+
+      if (increaseButton) {
+        updateCartItem(Number(increaseButton.dataset.quantityIncrease), (item) => {
+          item.quantity = String((Number(item.quantity) || 1) + 1);
+        });
+      }
+    });
+
+    clearCartButton?.addEventListener('click', () => {
+      saveStoredCart([]);
+      renderCart();
+    });
+
+    if (getStoredCart().length) renderCart();
+    else if (params.toString()) renderLegacyParams();
+    else renderEmptyCart();
+  </script>
+</body>
+</html>
