@@ -52,24 +52,23 @@ if (year) {
 }
 
 const galleryCategoryOrder = [
-  { key: 'bouquets', title: 'Balloon Bouquets' },
-  { key: 'centerpieces', title: 'Centerpieces' },
-  { key: 'arches-garlands', title: 'Arches & Garlands' },
-  { key: 'columns-entrances', title: 'Columns & Entrances' },
-  { key: 'custom-installations', title: 'Balloon Art' },
-  { key: 'event-packages', title: 'Event Packages' },
-  { key: 'baby-shower', title: 'Baby Shower' },
-  { key: 'events', title: 'Events' }
+  { key: 'bouquets', title: 'Balloon Garlands', price: 'Starting at $180' },
+  { key: 'arches-garlands', title: 'Balloon Arches', price: 'Starting at $325' },
+  { key: 'custom-installations', title: 'Backdrops', price: 'Starting at $450' },
+  { key: 'centerpieces', title: 'Centerpieces', price: 'Starting at $35' },
+  { key: 'event-packages', title: 'Organic Garland', price: 'Starting at $210' },
+  { key: 'columns-entrances', title: 'Columns', price: 'Starting at $95' }
 ];
 
 function categoryTitleForItem(item) {
   const alt = item.querySelector('img')?.alt?.toLowerCase() || '';
   const category = item.dataset.category;
 
+  if (category === 'baby-shower') return 'event-packages';
+
   if (category === 'custom-installations') {
     if (alt.includes('custom installations portfolio image 7') || alt.includes('custom installations portfolio image 8')) return 'event-packages';
-    if (alt.includes('custom installations portfolio image 2')) return 'custom-installations';
-    if (alt.includes('custom installations')) return 'events';
+    return 'custom-installations';
   }
 
   return category;
@@ -84,7 +83,7 @@ function buildCategorizedGallery() {
   const fragment = document.createDocumentFragment();
   let numberIndex = 1;
 
-  galleryCategoryOrder.forEach(({ key, title }) => {
+  galleryCategoryOrder.forEach(({ key, title, price }) => {
     const categoryItems = items.filter((item) => categoryTitleForItem(item) === key);
     if (!categoryItems.length) return;
 
@@ -95,6 +94,13 @@ function buildCategorizedGallery() {
     const heading = document.createElement('h3');
     heading.textContent = title;
     section.appendChild(heading);
+
+    if (price) {
+      const priceText = document.createElement('p');
+      priceText.className = 'category-price gallery-category-price';
+      priceText.textContent = price;
+      section.appendChild(priceText);
+    }
 
     const grid = document.createElement('div');
     grid.className = 'gallery-category-grid';
