@@ -5390,3 +5390,492 @@ body:not(.gallery-page):not(.checkout-page) .single-bouquet-grid .product-card:f
   object-position: center center !important;
   transform: none !important;
 }
+
+/* Mobile floating contact clarity: icon + label, luxury neutral finish */
+.floating-contact a {
+  gap: 7px;
+}
+
+.floating-icon,
+.floating-label {
+  display: inline-grid;
+  place-items: center;
+}
+
+.floating-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.floating-label {
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .floating-contact {
+    gap: 14px !important;
+  }
+
+  .floating-contact a {
+    display: grid !important;
+    grid-template-rows: 1fr auto;
+    place-items: center !important;
+    width: 64px !important;
+    min-width: 64px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    padding: 9px 6px 7px !important;
+    overflow: visible !important;
+    border: 1px solid rgba(90, 68, 55, 0.3) !important;
+    border-radius: 50% !important;
+    color: #fffaf2 !important;
+    background: linear-gradient(135deg, rgba(75, 55, 46, 0.98), rgba(166, 127, 96, 0.96)) !important;
+    box-shadow: 0 16px 38px rgba(62, 44, 33, 0.25) !important;
+    font-size: 0 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+
+  .floating-contact a::first-letter {
+    font-size: 0 !important;
+  }
+
+  .floating-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fffaf2;
+    background: rgba(255, 250, 242, 0.13);
+    font-size: 1.22rem;
+    font-weight: 900;
+  }
+
+  .floating-label {
+    color: rgba(255, 250, 242, 0.94);
+    font-size: 0.63rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 380px) {
+  .floating-contact a {
+    width: 58px !important;
+    min-width: 58px !important;
+    height: 58px !important;
+    min-height: 58px !important;
+    padding: 8px 5px 6px !important;
+  }
+
+  .floating-icon {
+    width: 27px;
+    height: 27px;
+    font-size: 1.05rem;
+  }
+
+  .floating-label {
+    font-size: 0.58rem;
+  }
+}
+
+/* Mobile-only floating contact readability fix: larger right-side luxury pills */
+@media (max-width: 760px) {
+  .floating-contact {
+    position: fixed !important;
+    top: auto !important;
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: max(18px, env(safe-area-inset-bottom)) !important;
+    display: grid !important;
+    grid-auto-flow: row !important;
+    gap: 12px !important;
+    transform: none !important;
+    z-index: 60 !important;
+  }
+
+  .floating-contact a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px !important;
+    width: 118px !important;
+    min-width: 118px !important;
+    height: 54px !important;
+    min-height: 54px !important;
+    padding: 0 15px !important;
+    overflow: visible !important;
+    border-radius: 999px !important;
+    font-size: 0 !important;
+    border: 1px solid rgba(255, 250, 242, 0.42) !important;
+    color: #fffaf2 !important;
+    background: linear-gradient(135deg, rgba(72, 52, 44, 0.98), rgba(157, 122, 96, 0.98)) !important;
+    box-shadow: 0 16px 38px rgba(62, 44, 33, 0.28) !important;
+    backdrop-filter: blur(14px) !important;
+  }
+
+  .floating-contact a::first-letter {
+    font-size: 0 !important;
+  }
+
+  .floating-icon {
+    display: inline-grid !important;
+    place-items: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 250, 242, 0.14) !important;
+    color: #fffaf2 !important;
+    font-size: 1.15rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .floating-label {
+    display: inline-block !important;
+    color: #fffaf2 !important;
+    font-size: 0.78rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .floating-contact a {
+    width: 108px !important;
+    min-width: 108px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    gap: 8px !important;
+    padding: 0 13px !important;
+  }
+
+  .floating-icon {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 1.02rem !important;
+  }
+
+  .floating-label {
+    font-size: 0.72rem !important;
+  }
+}
+
+/* Mobile-only floating contact: elegant large icon-only buttons */
+@media (max-width: 760px) {
+  .floating-contact {
+    position: fixed !important;
+    top: auto !important;
+    right: max(14px, env(safe-area-inset-right)) !important;
+    bottom: max(92px, calc(env(safe-area-inset-bottom) + 72px)) !important;
+    display: grid !important;
+    grid-auto-flow: row !important;
+    gap: 14px !important;
+    transform: none !important;
+    z-index: 70 !important;
+  }
+
+  .floating-contact a {
+    display: grid !important;
+    place-items: center !important;
+    width: 62px !important;
+    min-width: 62px !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255, 250, 242, 0.46) !important;
+    color: #fffaf2 !important;
+    background:
+      radial-gradient(circle at 32% 24%, rgba(255, 250, 242, 0.2), transparent 34%),
+      linear-gradient(135deg, rgba(69, 49, 42, 0.98), rgba(160, 122, 92, 0.98)) !important;
+    box-shadow: 0 18px 42px rgba(62, 44, 33, 0.3) !important;
+    backdrop-filter: blur(14px) !important;
+    font-size: 0 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+
+  .floating-contact a::first-letter {
+    font-size: 0 !important;
+  }
+
+  .floating-icon {
+    display: inline-grid !important;
+    place-items: center !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #fffaf2 !important;
+    font-size: 1.72rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+  }
+
+  .floating-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .floating-contact {
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: max(86px, calc(env(safe-area-inset-bottom) + 66px)) !important;
+    gap: 12px !important;
+  }
+
+  .floating-contact a {
+    width: 58px !important;
+    min-width: 58px !important;
+    height: 58px !important;
+    min-height: 58px !important;
+  }
+
+  .floating-icon {
+    font-size: 1.58rem !important;
+  }
+}
+
+/* FORCE mobile responsive floating contact buttons: icon-only stacked circles */
+@media screen and (max-width: 900px) {
+  .floating-contact {
+    position: fixed !important;
+    top: auto !important;
+    right: max(14px, env(safe-area-inset-right)) !important;
+    bottom: max(96px, calc(env(safe-area-inset-bottom) + 76px)) !important;
+    left: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    transform: none !important;
+    z-index: 999 !important;
+  }
+
+  .floating-contact a,
+  .floating-contact a:link,
+  .floating-contact a:visited {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255, 250, 242, 0.52) !important;
+    color: #fffaf2 !important;
+    background:
+      radial-gradient(circle at 34% 24%, rgba(255, 250, 242, 0.22), transparent 36%),
+      linear-gradient(135deg, rgba(64, 45, 38, 0.98), rgba(159, 121, 91, 0.98)) !important;
+    box-shadow: 0 18px 44px rgba(62, 44, 33, 0.34) !important;
+    backdrop-filter: blur(14px) !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    text-indent: 0 !important;
+    text-transform: none !important;
+  }
+
+  .floating-contact a::first-letter {
+    font-size: 0 !important;
+  }
+
+  .floating-contact a::before,
+  .floating-contact a::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .floating-contact .floating-icon {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    min-height: 64px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    color: #fffaf2 !important;
+    font-size: 1.85rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    text-indent: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .floating-contact .floating-label {
+    display: none !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .floating-contact {
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: max(90px, calc(env(safe-area-inset-bottom) + 70px)) !important;
+    gap: 12px !important;
+  }
+
+  .floating-contact a,
+  .floating-contact a:link,
+  .floating-contact a:visited,
+  .floating-contact .floating-icon {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+  }
+
+  .floating-contact .floating-icon {
+    font-size: 1.7rem !important;
+  }
+}
+
+/* FINAL mobile fix for actual floating contact links: target tel/mail anchors directly */
+@media screen and (max-width: 900px) {
+  .floating-contact {
+    position: fixed !important;
+    top: auto !important;
+    right: max(14px, env(safe-area-inset-right)) !important;
+    bottom: max(96px, calc(env(safe-area-inset-bottom) + 76px)) !important;
+    left: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    transform: none !important;
+    z-index: 9999 !important;
+  }
+
+  .floating-contact a[href^="tel:"],
+  .floating-contact a[href^="mailto:"] {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(255, 250, 242, 0.52) !important;
+    color: transparent !important;
+    background:
+      radial-gradient(circle at 34% 24%, rgba(255, 250, 242, 0.22), transparent 36%),
+      linear-gradient(135deg, rgba(64, 45, 38, 0.98), rgba(159, 121, 91, 0.98)) !important;
+    box-shadow: 0 18px 44px rgba(62, 44, 33, 0.34) !important;
+    backdrop-filter: blur(14px) !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    letter-spacing: 0 !important;
+    text-indent: -9999px !important;
+    text-transform: none !important;
+  }
+
+  .floating-contact a[href^="tel:"] *,
+  .floating-contact a[href^="mailto:"] *,
+  .floating-contact .floating-label {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .floating-contact a[href^="tel:"]::before,
+  .floating-contact a[href^="mailto:"]::before {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    color: #fffaf2 !important;
+    font-size: 1.85rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    text-indent: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .floating-contact a[href^="tel:"]::before {
+    content: "☎" !important;
+  }
+
+  .floating-contact a[href^="mailto:"]::before {
+    content: "✉" !important;
+  }
+
+  .floating-contact a[href^="tel:"]::after,
+  .floating-contact a[href^="mailto:"]::after,
+  .floating-contact a[href^="tel:"]::first-letter,
+  .floating-contact a[href^="mailto:"]::first-letter {
+    display: none !important;
+    content: none !important;
+    font-size: 0 !important;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .floating-contact {
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: max(90px, calc(env(safe-area-inset-bottom) + 70px)) !important;
+    gap: 12px !important;
+  }
+
+  .floating-contact a[href^="tel:"],
+  .floating-contact a[href^="mailto:"] {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+  }
+
+  .floating-contact a[href^="tel:"]::before,
+  .floating-contact a[href^="mailto:"]::before {
+    font-size: 1.72rem !important;
+  }
+}
